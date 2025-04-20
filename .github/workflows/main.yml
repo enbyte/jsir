@@ -30,3 +30,10 @@ jobs:
     - name: Build
       run: |
         "${GITHUB_WORKSPACE}/bin/bazel" build //...
+        
+    - name: Deploy
+      uses: actions/upload-artifact@v4.6.2
+      with:
+        name: jsir_gen
+        path: bazel-out/**/jsir_gen
+
